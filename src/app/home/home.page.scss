@@ -1,0 +1,28 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  .titulo {
+    text-align: center;
+    text-transform: capitalize;
+    color: #020230;
+    padding: 1.3rem;
+  }
+  .tbtn {
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top:5rem ;
+  }
+  .btn {
+    width: 90%;
+    height: 45px;
+    background: #2b0230;
+    color: white;
+    font-size: 17px;
+    border-radius: 1.08em;
+  }
+}

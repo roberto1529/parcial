@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="tarea">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ tarea.titulo }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Descripción:</strong> {{ tarea.descripcion }}</p>
+      <p><strong>Prioridad:</strong> {{ tarea.prioridad }}</p>
+      <p *ngIf="tarea.fecha"><strong>Fecha:</strong> {{ tarea.fecha }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" color="success" (click)="completarTarea()">Marcar como completada</ion-button>
+  <ion-button expand="full" color="medium" (click)="volver()">Volver</ion-button>
+</ion-content>

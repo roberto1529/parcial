@@ -1,0 +1,48 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">App parcial</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <h3 class="titulo">Ingresa tus credenciales</h3>
+    <form [formGroup]="fb" (ngSubmit)="onSubmit()">
+      <br /><br /><br />
+      <ion-list>
+        <ion-item>
+          <ion-input  label="Correo" formControlName="email" labelPlacement="floating"  placeholder="Enter text"></ion-input>
+        </ion-item>
+        @if (mensajeError('email', 'required')) {
+          <small class="text-danger">El usuario es obligatorio</small>
+          }
+        @if (mensajeError('email', 'required')) {
+          <small class="text-danger">El email es obligatorio</small>
+        }
+        <ion-item>
+          <ion-input label="Contraseña" formControlName="pass" labelPlacement="floating" placeholder="Enter text"></ion-input>
+        </ion-item>
+        @if (mensajeError('pass', 'required')) {
+          <small class="text-danger">El campo es obligatorio</small>
+        }
+      </ion-list>
+
+      <div class="tbtn">
+        <button class="btn" (click)="onSubmit()" [disabled]="fb.invalid">
+          Iniciar Sesión
+        </button>
+
+        <ion-toast trigger="open-toast" [message]="message" [isOpen]="isToastOpen" [duration]="5000"></ion-toast>
+
+      </div>
+    </form>
+  </div>
+</ion-content>

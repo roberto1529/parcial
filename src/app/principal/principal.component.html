@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let tarea of tareas" [color]="tarea.completada ? 'success' : ''">
+      <ion-checkbox slot="start" [(ngModel)]="tarea.completada" (ionChange)="completarTarea(tarea)"></ion-checkbox>
+      <ion-label (click)="verDetalles(tarea)">
+        <h2>{{ tarea.titulo }}</h2>
+        <p [ngStyle]="{ color: obtenerColorPrioridad(tarea.prioridad) }">
+          Prioridad: {{ tarea.prioridad }}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="agregarTarea()">Añadir Tarea</ion-button>
+</ion-content>
